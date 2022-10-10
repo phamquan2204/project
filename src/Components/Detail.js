@@ -156,8 +156,8 @@ function Detail() {
                 </Link>
                 <SwiperEffectFade datas={recommend} type={type} />
             </div>
-            {console.log(videos)}
-            {console.log(casts)}
+            {/* {console.log(videos)}
+            {console.log(casts)} */}
         </div>
     )
 }

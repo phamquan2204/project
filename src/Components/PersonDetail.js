@@ -50,8 +50,6 @@ function PersonDetail() {
             {detail.biography}
           </p>
         </div>
-
-        {/* {console.log(detail, credits)} */}
       </div>
     </div>
   )
