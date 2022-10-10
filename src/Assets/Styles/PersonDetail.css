@@ -1,0 +1,19 @@
+.detail-container{
+    /* font-size: 13px; */
+}
+
+.detail-image {
+  width: 30%;
+  margin-right: 10%;
+}
+.person-img {
+  width: 100%;
+}
+.person-img > img {
+  width: 100%;
+  height: auto;
+  border-radius: 1em !important;
+}
+.detail-data {
+  width: 60%;
+}

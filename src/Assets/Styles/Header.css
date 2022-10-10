@@ -1,0 +1,17 @@
+button.bg-dark:focus {
+  border: none !important;
+  background-color: none !important;
+}
+
+button.bg-dark:hover {
+  border: none !important;
+  background-color: none !important;
+}
+
+button.bg-dark {
+  background-color: transparent !important;
+}
+
+.subItem:hover {
+  background-color: rgb(44, 44, 44) !important;
+}
