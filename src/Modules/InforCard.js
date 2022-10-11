@@ -22,7 +22,7 @@ export function InforCard(props) {
             />
             <p className="star-infor text-light bg-primary">
                 <i className="fa-solid fa-star mr-1"></i>
-                <p className="m-0">{props.vote_average|| props.popularity}</p>
+                <p className="m-0">{props.vote_average || props.popularity}</p>
             </p>
             {props.media_type === 'person'
                 ? <p className="name text-light text-center">{props.title || props.name}</p>
@@ -51,7 +51,20 @@ export function BannerCard(props) {
                 }}
                 alt={props.title || props.name}
             />
-            {/* <p className="banner-name ">{props.title || props.name}</p> */}
+            <p className="star-infor-banner text-light bg-primary ">
+                <i className="fa-solid fa-star m-0 mr-1 h4"></i>
+                <p className="m-0 h4">{props.vote_average || props.popularity}</p>
+            </p>
+            <div className="banner-data">
+                <div className="banner-description">
+                    <p className="banner-name h1 ">{props.title || props.name}</p>
+                    <p className="banner-first_air_date text-light">First air date: {props.airDate}</p>
+                    <div className="overview text-light">
+                        <p className="h3">Overview</p>
+                        <p className="overview-text">{props.overview}</p>
+                    </div>
+                </div>
+            </div>
         </Link>
     )
 }

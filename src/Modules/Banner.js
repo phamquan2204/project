@@ -14,7 +14,7 @@ function Banner() {
 
   }, []);
   return (
-    <div className="banner-container text-uppercase">
+    <div className="banner-container">
       <div className="sidebar"></div>
       <SwiperNavigation datas={trendingMovies} />
       <div className="sidebar"></div>

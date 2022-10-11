@@ -63,13 +63,20 @@ export function SwiperEffectFade(props) {
 
 
 export function SwiperNavigation(props) {
+    const cutPara = (para) => {
+        let newPara = ''
+        if (para.length > 200) {
+            newPara = para.slice(0, 199).concat('...')
+        } else { newPara = para }
+        return newPara
+    }
     return (
         <>
             <Swiper
                 // pagination={true}
                 modules={[Pagination, Autoplay, Keyboard]}
                 keyboard={{ clickable: true }}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 1000 }}
                 loop={true}
                 className="mySwiper">
                 {props.datas.map((data, index) => {
@@ -82,9 +89,13 @@ export function SwiperNavigation(props) {
                                     title={data.title}
                                     backdrop_path={data.backdrop_path}
                                     media_type={data.media_type}
+                                    vote_average={data.vote_average}
+                                    airDate={data.first_air_date || data.release_date}
+                                    overview={cutPara(data.overview)}
                                 />
                             </SwiperSlide>)
                     }
+                    console.log(data)
                 }
                 )}
             </Swiper>

@@ -1,7 +1,3 @@
-.detail-container{
-    /* font-size: 13px; */
-}
-
 .detail-image {
   width: 30%;
   margin-right: 10%;
@@ -16,4 +12,17 @@
 }
 .detail-data {
   width: 60%;
+}
+
+@media (max-width: 768px) {
+  .detail-image {
+    width: 100%;
+    margin-right: 10%;
+  }
+  .detail-data {
+    width: 100%;
+  }
+  .first-th {
+    display: none;
+  }
 }
