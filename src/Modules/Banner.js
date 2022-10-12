@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TrendingServices from '../Services/TrendingServices.js'
 
-import { SwiperNavigation } from '../Modules/SwiperList.js'
+import { SwiperNavigation, FreeModeSwiper } from '../Modules/SwiperList.js'
 import '../Assets/Styles/Banner.css'
 function Banner() {
   const [trendingMovies, setTrendingMovies] = useState([])

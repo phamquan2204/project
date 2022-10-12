@@ -16,7 +16,7 @@ function Home() {
   return (
     <div className="m-0 row">
       <Banner />
-      <div className="trending-container col-12 row">
+      <div className="trending-container col-12 m-1 m-lg-2 row">
         <TopRated type='movie' />
         <Trending mediaType='movie' name='trending movie' type='movie' />
         <Trending mediaType='tv' name='trending tv show' type='tv' />

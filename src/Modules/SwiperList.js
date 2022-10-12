@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { InforCard, BannerCard } from './InforCard.js'
 import img from '../Assets/Images/img.jpg'
@@ -14,35 +14,39 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 
 import "../Assets/Styles/SwiperList.css";
 
 // import required modules
-import { Navigation, Pagination, Autoplay, Keyboard } from "swiper";
+import { Navigation, Pagination, Autoplay, Keyboard, FreeMode, Thumbs } from "swiper";
 
 
 export function SwiperEffectFade(props) {
     return (
         <>
             <Swiper
+                style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                    "--swiper-navigation-size": "1.5em",
+                }}
                 slidesPerView={6}
                 spaceBetween={0}
                 slidesPerGroup={2}
                 loop={true}
                 loopFillGroupWithBlank={true}
-                // pagination={{
-                //     clickable: true,
-                // }}
                 navigation={true}
                 effect={"fade"}
                 keyboard={{
                     enabled: false
                 }}
                 modules={[Navigation]}
-                className="mySwiper w-100"
+                className="mySwiper"
             >
                 {props.datas.map(data =>
-                    <SwiperSlide className="mySwiperSlide col-lg-2 col-md-3 col-5">
+                    <SwiperSlide className="mySwiperSlide infor-swiper col-lg-2 col-md-3 col-5">
                         <InforCard
                             id={data.id}
                             name={data.name}
@@ -61,24 +65,29 @@ export function SwiperEffectFade(props) {
     )
 }
 
+const cutPara = (para) => {
+    let newPara = ''
+    if (para.length > 200) {
+        newPara = para.slice(0, 199).concat('...')
+    } else { newPara = para }
+    return newPara
+}
 
 export function SwiperNavigation(props) {
-    const cutPara = (para) => {
-        let newPara = ''
-        if (para.length > 200) {
-            newPara = para.slice(0, 199).concat('...')
-        } else { newPara = para }
-        return newPara
-    }
     return (
         <>
             <Swiper
-                // pagination={true}
-                modules={[Pagination, Autoplay, Keyboard]}
+                style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-navigation-size": "1.5em",
+                    "--swiper-pagination-color": "#fff",
+                }}
+                modules={[Navigation, Autoplay, Keyboard]}
                 keyboard={{ clickable: true }}
                 autoplay={{ delay: 1000 }}
+                navigation={true}
                 loop={true}
-                className="mySwiper">
+                className="mySwiper banner-swiper">
                 {props.datas.map((data, index) => {
                     if (index <= 6) {
                         return (
@@ -100,6 +109,5 @@ export function SwiperNavigation(props) {
                 )}
             </Swiper>
         </>
-        // />
     )
 }

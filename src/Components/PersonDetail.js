@@ -30,7 +30,7 @@ function PersonDetail() {
 
   return (
     <>
-    <p className="h2 text-light text-center pt-3">{detail.gender ==2 ? 'Actor' : 'Actress'}: {detail.name}</p>
+      <p className="h2 text-light text-center pt-3">{detail.gender == 2 ? 'Actor' : 'Actress'}: {detail.name}</p>
       <div className="detail-container w-90 p-lg-5 d-flex flex-column flex-sm-row text-light text-justify">
         <div className="detail-image">
           <div className="person-img">
@@ -75,7 +75,7 @@ function PersonDetail() {
               return (
                 <tr key={credit.id}>
                   <td className="first-th"></td>
-                  <td>{credit.first_air_date || credit.release_date}</td>
+                  <td>{credit.first_air_date?.slice(0,4) || credit.release_date?.slice(0,4)}</td>
                   <td>{credit.name || credit.title}</td>
                   <td>{credit.character}</td>
                 </tr>
@@ -86,7 +86,7 @@ function PersonDetail() {
               return (
                 <tr key={credit.id}>
                   <td className="first-th"></td>
-                  <td>{credit.first_air_date || credit.release_date}</td>
+                  <td>{credit.first_air_date?.slice(0, 4) || credit.release_date?.slice(0, 4)}</td>
                   <td>{credit.name || credit.title}</td>
                   <td>{credit.character}</td>
                 </tr>

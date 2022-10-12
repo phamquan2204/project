@@ -33,7 +33,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .banner-container {
     width: 100%;
     height: auto;
@@ -47,6 +47,9 @@
     width: 100%;
     height: 100%;
     background-color: #000;
+    display: none;
+  }
+  .overview {
     display: none;
   }
 }

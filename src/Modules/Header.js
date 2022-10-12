@@ -17,7 +17,7 @@ function Header() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-light card-header bg-dark" role="navigation">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-light card-header bg-dark" id="header" role="navigation">
       <NavLink to="/" className="navbar-brand text-capitalize h3">The new movie</NavLink>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

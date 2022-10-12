@@ -1,0 +1,23 @@
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-me {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+@media (max-width: 768px) {
+  .card-footer {
+    flex-direction: column;
+  }
+
+  .contact-me {
+    width: 100%;
+  }
+}
