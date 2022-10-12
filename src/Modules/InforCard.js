@@ -36,6 +36,7 @@ export function BannerCard(props) {
             style={{
                 height: '100%',
             }}
+            title={props.title || props.name}
         >
 
             <img

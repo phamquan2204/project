@@ -29,7 +29,7 @@ function Footer() {
       </div>
 
       <div className="footer-item contact-me">
-        <p className="h3 text-center text-light">Contact me</p>
+        <p className="text-center text-light">Contact me</p>
         <div className="social">
           {icons.map((icon) => {
             return (

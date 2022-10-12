@@ -9,6 +9,10 @@
   width: 30%;
   display: flex;
   flex-direction: column;
+  font-size: 1em;
+}
+
+.social a {
   font-size: 2em;
 }
 

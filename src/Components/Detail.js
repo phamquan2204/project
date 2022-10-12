@@ -105,17 +105,27 @@ function Detail() {
                 <img
                     className="cover-image"
                     src={IMG_BASE_URL + W500 + details.backdrop_path}
-                    alt=""
+                    alt={details.title || details.name}
                 />
                 <div className="poster_img col-lg-3 col-md-4 col-12">
                     <img
                         className="poster col-12 m-0 p-0"
                         src={IMG_BASE_URL + ORIGINAL + details.poster_path}
-                        alt={name} />
+                        alt={details.title || details.name} />
                 </div>
                 <div className="detail-container col-lg-9 col-md-8 col-12 text-light">
                     <h2 className="detail-name ">{details.title || details.name}</h2>
-                    <p className="release_date">First air date: {details.release_date}</p>
+                    <p className="release_date">First air date: {details.release_date || details.first_air_date}</p>
+                    <div className="detail-rating d-flex w-lg-20 w-sm-100">
+                        <div className="vote">
+                            <p className="h5 mr-5">Rate</p>
+                            <p>{details.vote_average}</p>
+                        </div>
+                        <div className="runtime">
+                            <p className="h5">Runtime</p>
+                            <p>{details.runtime}</p>
+                        </div>
+                    </div>
                     <div className="overview text-light">
                         <p><strong>Overview</strong></p>
                         <p className="overview-data">
@@ -131,7 +141,23 @@ function Detail() {
                 </div>
             </div>
 
-            <div className="media-list">
+            <div className="media-list mb-4">
+                <p className="media h4 text-light">Media</p>
+                <div className="videos row justify-content--start">
+                    {videos?.map((video) => {
+                        return (
+                            <iframe
+                                className="col-lg-6 mt-4"
+                                width="560"
+                                height="315"
+                                src={`https://www.youtube.com/embed/${video.key}`}
+                                title={details.title || details.name}
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        )
+                    })}
+                </div>
             </div>
             <div className="detail-list cast mt-4">
                 <Link to={`/similar/${type}/${name}/${id}&page=1`}>

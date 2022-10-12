@@ -38,8 +38,7 @@ function PersonDetail() {
           </div>
           <div className="data">
             <p className="detail-name">
-              Name:
-              <span>{detail.name}</span>
+              Name: <span>{detail.name}</span>
             </p>
             <p className="date-of-birth">Birthday: {detail.birthday}</p>
             <p className="place-of-birth">Place of birth: {detail.place_of_birth}</p>
