@@ -102,9 +102,9 @@ function Detail() {
         for (let i = 0; i < vid.length; i++) {
             if (vid[i].type === "Trailer" || vid[i].type === "Offical Trailer") {
                 return (<iframe
-                    className="vid d-flex justify-content-center"
+                    className="vid col-md-12 d-flex justify-content-center"
                     width="560"
-                    height="315"
+                    height="325"
                     src={`https://www.youtube.com/embed/${vid[i]?.key}`}
                     title={details.title || details.name}
                     frameborder="0"
