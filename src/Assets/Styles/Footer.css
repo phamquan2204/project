@@ -5,19 +5,43 @@
   align-items: center;
 }
 
-.contact-me {
-  width: 15%;
+.footer-item {
+  width: 30%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   font-size: 2em;
+}
+
+.footer-item a {
+  color: #fff;
+}
+
+.data > p > a:hover {
+  text-decoration: underline;
+}
+
+.footer-item-a {
+  width: 30%;
+  text-align: center;
+}
+
+.data {
+  font-size: 1em;
+  width: 30%;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 768px) {
   .card-footer {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
-  .contact-me {
+  .footer-item {
     width: 100%;
+    text-align: center;
   }
 }

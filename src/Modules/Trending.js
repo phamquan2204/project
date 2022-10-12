@@ -45,7 +45,7 @@ function Trending(props) {
     }, [mediaType, timeWindow]);
 
     return (
-        <div className="col-12 mt-3 text-uppercase">
+        <div className="col-12 mt-3 m-0 p-0 text-uppercase">
             <div className="lg-h4 sm-h5 d-flex align-items-baseline justify-content-left text-light text-uppercase text-left">
                 <Link to={`/trending/${props.type}&page=1`}>
                     <p className="module-name mr-3 text-light">{props.name + ' >>'}</p>

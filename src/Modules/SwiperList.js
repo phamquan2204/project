@@ -43,10 +43,10 @@ export function SwiperEffectFade(props) {
                     enabled: false
                 }}
                 modules={[Navigation]}
-                className="mySwiper"
+                className="mySwiper item-swiper"
             >
                 {props.datas.map(data =>
-                    <SwiperSlide className="mySwiperSlide infor-swiper col-lg-2 col-md-3 col-5">
+                    <SwiperSlide className="mySwiperSlide infor-swiper col-lg-2 col-md-3 col-5 m-2 p-0">
                         <InforCard
                             id={data.id}
                             name={data.name}

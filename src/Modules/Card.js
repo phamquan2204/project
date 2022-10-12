@@ -22,7 +22,7 @@ function Card(props) {
     <Link
       to={'/' + props.types + "/" + props.name.toLowerCase().replaceAll(' ', '+') + '/' + props.id}
       title={props.title || props.name}
-      className="mb-2 mt-2 p-1 text-center text-capitalize text-light col-md-2 col-sm-4 col-6 align-items-baseline col row"
+      className="mb-2 mt-2 m-0 p-1 text-center text-capitalize text-light col-md-2 col-sm-4 col-6 align-items-baseline col row"
       onMouseEnter={() => {
         setImage(`${props.imgSrc}`)
       }}
@@ -33,7 +33,7 @@ function Card(props) {
       <div
         className="image d-flex justify-content-center m-0 mb-2 p-0 h-100 col-12">
         <img
-          className="overlay-image col-10 col-md-8 col-md-8 p-1"
+          className="overlay-image p-lg-2"
           src={props.imgSrc}
           alt={props.name}
         />

@@ -46,7 +46,7 @@ function PersonDetail() {
           </div>
         </div>
         <div className="detail-data">
-          <div className="biography">
+          <div className="biography pr-2 pl-2 m-0">
             <p className="h4">Biography</p>
             <p>
               {detail.biography}

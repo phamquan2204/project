@@ -130,6 +130,7 @@ function Detail() {
                     </div>
                 </div>
             </div>
+
             <div className="media-list">
             </div>
             <div className="detail-list cast mt-4">
@@ -156,8 +157,7 @@ function Detail() {
                 </Link>
                 <SwiperEffectFade datas={recommend} type={type} />
             </div>
-            {/* {console.log(videos)}
-            {console.log(casts)} */}
+            {console.log(details)}
         </div>
     )
 }

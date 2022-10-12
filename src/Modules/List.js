@@ -30,7 +30,7 @@ function List(props) {
         <div>
             <div className="search-results m-3">
                 <p className="h4 text-light text-uppercase text-center"><strong>{props.title}</strong></p>
-                <div className="data-container row">
+                <div className="data-container w-100 row align-items-center">
                     <div className="row align-items-center">
                         {
                             newData.map((movie) => {

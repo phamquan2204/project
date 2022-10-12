@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.infor-swiper {
+.item-swiper {
   background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1));
 }
 
@@ -30,5 +30,15 @@
   .banner-swiper .swiper-button-next,
   .banner-swiper .swiper-button-prev {
     display: none;
+  }
+
+  .item-swiper .swiper-button-next,
+  .item-swiper .swiper-button-prev {
+    display: none;
+  }
+
+  .mySwiper {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
