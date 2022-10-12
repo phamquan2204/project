@@ -96,18 +96,37 @@ function Detail() {
         }
     }
 
+
+    const videosDisplay = (vid) => {
+        let video
+        for (let i = 0; i < vid.length; i++) {
+            if (vid[i].type === "Trailer" || vid[i].type === "Offical Trailer") {
+                return (<iframe
+                    className="vid d-flex justify-content-center"
+                    width="560"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${vid[i]?.key}`}
+                    title={details.title || details.name}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>)
+            }
+        }
+    }
+
     const { backdrops, logos, posters } = images
 
     return (
         <div
-            className="mt-3 mb-3 p-3 d-flex flex-column justify-content-center">
+            //  d-flex flex-column justify-content-center
+            className="details mt-3 w-md-100 mb-3 p-3 d-grid grid-column">
             <div className="cover p-3 row" >
                 <img
                     className="cover-image"
                     src={IMG_BASE_URL + W500 + details.backdrop_path}
                     alt={details.title || details.name}
                 />
-                <div className="poster_img col-lg-3 col-md-4 col-12">
+                <div className="poster_img col-lg-3 col-md-4 col-12 d-flex align-items-center">
                     <img
                         className="poster col-12 m-0 p-0"
                         src={IMG_BASE_URL + ORIGINAL + details.poster_path}
@@ -140,50 +159,38 @@ function Detail() {
                     </div>
                 </div>
             </div>
-
-            <div className="media-list mb-4">
-                <p className="media h4 text-light">Media</p>
-                <div className="videos row justify-content--start">
-                    {videos?.map((video) => {
-                        return (
-                            <iframe
-                                className="col-lg-6 mt-4"
-                                width="560"
-                                height="315"
-                                src={`https://www.youtube.com/embed/${video.key}`}
-                                title={details.title || details.name}
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        )
-                    })}
+            <div className="side-media w-100">
+                <p className="h4 text-light">Media</p>
+                {videosDisplay(videos)}
+            </div>
+            <div className="list-data">
+                <div className="detail-list cast mt-4">
+                    <Link to={`/similar/${type}/${name}/${id}&page=1`}>
+                        <p className="h4 text-light mb-4 text-capitalize">
+                            <span> Cast </span>
+                        </p>
+                    </Link>
+                    <SwiperEffectFade datas={casts} type={'person'} />
+                </div>
+                <div className="detail-list similar mt-4">
+                    <Link to={`/similar/${type}/${name}/${id}&page=1`}>
+                        <p className="h4 text-light mb-4 text-capitalize">
+                            <span> Similar </span>
+                        </p>
+                    </Link>
+                    <SwiperEffectFade datas={similar} type={type} />
+                </div>
+                <div className="detail-list recommend mt-4">
+                    <Link to={`/recommend/${type}/${name}/${id}&page=1`}>
+                        <p className="h4 text-light mb-4 text-capitalize">
+                            <span> Recommend </span>
+                        </p>
+                    </Link>
+                    <SwiperEffectFade datas={recommend} type={type} />
                 </div>
             </div>
-            <div className="detail-list cast mt-4">
-                <Link to={`/similar/${type}/${name}/${id}&page=1`}>
-                    <p className="h4 text-light mb-4 text-capitalize">
-                        <span> Cast </span>
-                    </p>
-                </Link>
-                <SwiperEffectFade datas={casts} type={'person'} />
-            </div>
-            <div className="detail-list similar mt-4">
-                <Link to={`/similar/${type}/${name}/${id}&page=1`}>
-                    <p className="h4 text-light mb-4 text-capitalize">
-                        <span> Similar </span>
-                    </p>
-                </Link>
-                <SwiperEffectFade datas={similar} type={type} />
-            </div>
-            <div className="detail-list recommend mt-4">
-                <Link to={`/recommend/${type}/${name}/${id}&page=1`}>
-                    <p className="h4 text-light mb-4 text-capitalize">
-                        <span> Recommend </span>
-                    </p>
-                </Link>
-                <SwiperEffectFade datas={recommend} type={type} />
-            </div>
-            {console.log(details)}
+            {console.log(videos)}
+
         </div>
     )
 }

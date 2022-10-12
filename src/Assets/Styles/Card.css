@@ -40,9 +40,9 @@
 
 .star {
   position: absolute;
-  left: 4.5em;
-  top: 1em;
-  font-size: 0.7em;
+  left: 1.5em;
+  top: 1.5em;
+  font-size: 0.8em;
   width: 4em;
   border-radius: 1em;
   display: flex;
